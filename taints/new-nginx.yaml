@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    run: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  nodeSelector:
+    gpu: "false"

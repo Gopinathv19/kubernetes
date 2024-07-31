@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-svc
+  labels:
+    env: demo
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30001  # Ensure NodePort is within the allowed range (30000-32767)
+  selector:
+    app: nginx  # This should match the label defined in your Deployment
+
+
+

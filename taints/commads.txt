@@ -1,0 +1,35 @@
+// to create the taint in the node 
+kubectl taint node node-name  gpu=true:NoShcedule
+
+// to remove the taint from the node
+
+kubectl taint node node-name  gpu=true:NoShcedule-
+
+// by placing the - in the very end help to remove the taint
+
+// describing the node
+
+kubectl describe node nodename 
+
+k describe node gopi-worker |grep -i  taint
+
+
+k run redis1 --image=redis --dry-run=client -o yaml
+
+// adding the label in the node
+
+k label node nodename gpu=false
+
+to get the node with the following label
+
+k describe node -l gpu=false
+
+to label the node 
+
+k label node mycluster-worker gpu=false
+
+// to unlabel the node 
+
+kubectl label node mycluster-worker gpu- // adding the - in the very end
+
+ 

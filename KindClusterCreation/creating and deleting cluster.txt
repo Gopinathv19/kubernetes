@@ -1,0 +1,2 @@
+kind create cluster --name mycluster --config kind.yaml 
+kind delte cluster --name clustername

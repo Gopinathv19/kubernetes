@@ -1,0 +1,36 @@
+kubectl explain svc
+
+kubectl get pod --show-labels
+
+kind create cluster --config=deployment.yml --name=gopi
+
+kind delete cluster --name name-of-the-cluster
+
+source .bash_profile
+
+kubectl get ep
+
+________________________________________________________________________________________________
+
+name spaces concept command
+
+
+k get svc -n namespace-demo - Get the list of services in the 'namespace-demo' namespace.
+source .bash_profile - Reload the .bash_profile to apply any changes made.
+k get svc -n namespace-demo - Get the list of services in the 'namespace-demo' namespace (again).
+k expose svc-demo deploy gopi --port 80 - Expose a deployment named 'gopi' as a service with port 80.
+k expose svc-demo deploy gopi --port 80 --name=svc-demo - Expose a deployment named 'gopi' as a service with port 80 and name it 'svc-demo'.
+k expose deploy gopi --name=svc-demo --port 80 - Expose a deployment named 'gopi' as a service with port 80 and name it 'svc-demo' (correcting the command).
+k get svc - Get the list of services in the current namespace.
+k get pods -o wide -n namespace-demo - Get a detailed list of pods in the 'namespace-demo' namespace.
+k exec -it demo-677cfb9d49-5rv76 -- sh - Execute an interactive shell in the pod 'demo-677cfb9d49-5rv76'.
+k exec -it demo-677cfb9d49-5rv76 demo-677cfb9d49-5rv76 -- sh - Incorrect command. Attempt to execute an interactive shell in the pod 'demo-677cfb9d49-5rv76'.
+k exec -it -n demo demo-677cfb9d49-5rv76 -- sh - Execute an interactive shell in the pod 'demo-677cfb9d49-5rv76' in the 'demo' namespace.
+k exec -it demo-677cfb9d49-5rv76 -n demo -- sh - Execute an interactive shell in the pod 'demo-677cfb9d49-5rv76' in the 'demo' namespace (again).
+k get ns - Get the list of namespaces.
+k exec -it demo-677cfb9d49-5rv76 -n namespace-demo -- sh - Execute an interactive shell in the pod 'demo-677cfb9d49-5rv76' in the 'namespace-demo' namespace.
+
+__________________________________________________________________________________________________
+
+kubectl edit deployment my-deployment
+
